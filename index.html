@@ -472,6 +472,77 @@
             font-size: 1rem;
         }
 
+        /* --- TIM BULAT SECTION (NEW) --- */
+        .team-section-container {
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .team-section-container h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-section-container p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-circles-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .team-member-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 130px;
+        }
+
+        .team-avatar-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            box-shadow: var(--shadow);
+            background: #e2e8f0;
+            margin-bottom: 0.75rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .team-avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member-card:hover .team-avatar-circle {
+            transform: scale(1.08);
+            border-color: var(--primary);
+        }
+
+        .team-member-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .team-member-role {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
         /* Values Grid */
         .admin-values-header {
             text-align: center;
@@ -1200,7 +1271,7 @@
                 <!-- Admin Hero Card -->
                 <div class="admin-hero-card">
                     <div class="admin-avatar-box">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2P0IPvpss6nSLpXWfvAdFiBXfKgM5BoAJX5ovEKYQOpBjCL3NaRwovUI&s=10=80" alt="Admin Utama Sewasini" onerror="this.src='https://via.placeholder.com/400x400?text=Admin+Sewasini'">
+                        <img src="ava.jpg" alt="Admin Utama Sewasini" onerror="this.src='https://via.placeholder.com/400x400?text=Admin+Sewasini'">
                         <div class="admin-badge-overlay">
                             <i class="fa-solid fa-shield-halved"></i> Kepala Operasional & Layanan
                         </div>
@@ -1216,17 +1287,67 @@
                                 <i class="fa-solid fa-circle-check"></i> Respons Cepat & Ramah
                             </div>
                             <div class="admin-meta-item">
-                                <i class="fa-solid fa-circle-check"></i> Quality Control Ketat
-                            </div>
-                            <div class="admin-meta-item">
                                 <i class="fa-solid fa-circle-check"></i> Transparansi Deposit
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- SECTION TIM BULAT (5 ORANG) -->
+                <div class="team-section-container">
+                    <h3>Jajaran Tim & Staff Kami</h3>
+                    <p>Berkenalan dengan anggota tim berdedikasi yang siap melayani kebutuhan sewa Anda.</p>
+                    
+                    <div class="team-circles-grid">
+                        <!-- Anggota Tim 1 (Marsya - ava.jpg) -->
+                        <div class="team-member-card">
+                            <div class="team-avatar-circle">
+                                <img src="ava.jpg" alt="Marsya" onerror="this.src='https://via.placeholder.com/200x200?text=Team+1'">
+                            </div>
+                            <div class="team-member-name">Marsya</div>
+                            <div class="team-member-role">Manager Utama</div>
+                        </div>
+
+                        <!-- Anggota Tim 2 (Kartun) -->
+                        <div class="team-member-card">
+                            <div class="team-avatar-circle">
+                                <img src="https://img.freepik.com/free-vector/cute-girl-telemarketer-with-headset-cartoon-vector-icon-illustration-people-technology-icon-isolated_138676-5687.jpg" alt="Alya" onerror="this.src='https://via.placeholder.com/200x200?text=Team+2'">
+                            </div>
+                            <div class="team-member-name">Alya</div>
+                            <div class="team-member-role">Customer Service</div>
+                        </div>
+
+                        <!-- Anggota Tim 3 (Kartun) -->
+                        <div class="team-member-card">
+                            <div class="team-avatar-circle">
+                                <img src="https://img.freepik.com/free-vector/cute-delivery-man-holding-box-cartoon-vector-icon-illustration-people-transportation-icon-isolated_138676-5683.jpg" alt="Rizky" onerror="this.src='https://via.placeholder.com/200x200?text=Team+3'">
+                            </div>
+                            <div class="team-member-name">Rizky</div>
+                            <div class="team-member-role">Logistik & Kurir</div>
+                        </div>
+
+                        <!-- Anggota Tim 4 (Kartun) -->
+                        <div class="team-member-card">
+                            <div class="team-avatar-circle">
+                                <img src="https://img.freepik.com/free-vector/cute-mechanic-man-holding-wrench-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5680.jpg" alt="Fajar" onerror="this.src='https://via.placeholder.com/200x200?text=Team+4'">
+                            </div>
+                            <div class="team-member-name">Fajar</div>
+                            <div class="team-member-role">Teknisi & Maintenance</div>
+                        </div>
+
+                        <!-- Anggota Tim 5 (Kartun) -->
+                        <div class="team-member-card">
+                            <div class="team-avatar-circle">
+                                <img src="https://img.freepik.com/free-vector/cute-hijabi-girl-working-laptop-cartoon-vector-icon-illustration-people-technology-icon-concept_138676-5744.jpg" alt="Siti" onerror="this.src='https://via.placeholder.com/200x200?text=Team+5'">
+                            </div>
+                            <div class="team-member-name">Siti</div>
+                            <div class="team-member-role">Administrasi</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Admin Values / Standards -->
-                <div class="admin-values-header">
+                <div class="admin-values-header" style="margin-top: 3rem;">
                     <h3>Standar Profesionalisme Kami</h3>
                 </div>
                 <div class="admin-values-grid">
