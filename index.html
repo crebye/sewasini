@@ -452,6 +452,21 @@
             object-fit: cover;
         }
 
+        /* Styling container foto dan nama kepala tim */
+        .admin-avatar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .admin-name-label {
+            margin-top: 0.75rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+
         .admin-badge-overlay {
             position: absolute;
             bottom: 12px;
@@ -472,6 +487,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
+            display: none; /* Disembunyikan karena nama sudah dipindah ke bawah foto */
         }
 
         .admin-role {
@@ -991,9 +1007,12 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .admin-avatar-box {
+            .admin-avatar-wrapper {
                 max-width: 220px;
                 margin: 0 auto;
+            }
+            .admin-avatar-box {
+                width: 220px;
                 height: 220px;
             }
             .admin-meta-list {
@@ -1120,20 +1139,20 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Kasur -->
+                <!-- Card 3: Kasur Lipat -->
                 <div class="product-card" data-page="1">
                     <div class="product-image">
                         <span class="badge">Rumah Tangga</span>
-                        <img src="https://p19-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/9/2/c253e92e-acf9-47d0-b4c7-f524c4d57caa.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.webp?lk3s=0ccea506&x-expires=1794857121&x-signature=mcoEQoLDrYS2RXuBhjVBN51Dbqc%3D&x-signature-webp=mcoEQoLDrYS2RXuBhjVBN51Dbqc%3D&ect=4g" alt="Kasur Angin / Airbed Single" onerror="this.src='https://via.placeholder.com/600x400?text=Kasur+Angin'">
+                        <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/img/VqbcmM/2021/9/2/c253e92e-acf9-47d0-b4c7-f524c4d57caa.jpg~tplv-aphluv4xwc-resize-jpeg:700:0.jpg" alt="Kasur Lipat Single" onerror="this.src='https://via.placeholder.com/600x400?text=Kasur+Lipat'">
                     </div>
                     <div class="product-content">
                         <span class="product-category">Furniture</span>
-                        <h3 class="product-title">Kasur Angin / Airbed Single</h3>
+                        <h3 class="product-title">Kasur Lipat Single</h3>
                         <div class="product-price-box">
                             <div class="product-price">Rp 35.000 <span>/ hari</span></div>
                             <div class="product-deposit">Deposit: <strong>Rp 40.000</strong></div>
                         </div>
-                        <button class="btn-rent" onclick="sewaWA('Kasur Angin / Airbed Single', 'Rp 35.000/hari', 'Rp 40.000')">
+                        <button class="btn-rent" onclick="sewaWA('Kasur Lipat Single', 'Rp 35.000/hari', 'Rp 40.000')">
                             <i class="fa-brands fa-whatsapp"></i> Sewa Sekarang
                         </button>
                     </div>
@@ -1306,7 +1325,7 @@
                             </div>
                             <div class="contact-detail">
                                 <h4>Email Resmi</h4>
-                                <a href="mailto:info@sewasini.com">marsya42@sma.belajar.id</a>
+                                <a href="mailto:marsya42@sma.belajar.id">marsya42@sma.belajar.id</a>
                             </div>
                         </div>
                     </div>
@@ -1329,18 +1348,20 @@
                     <h2>Profil Pengelola & Tim Sewasini</h2>
                 </div>
 
-                <!-- Admin Hero Card -->
+                <!-- Admin Hero Card (Marsya dengan nama di bawah foto) -->
                 <div class="admin-hero-card">
-                    <div class="admin-avatar-box">
-                        <img src="ava.jpg" alt="Admin Utama Sewasini" onerror="this.src='https://via.placeholder.com/400x400?text=Admin+Sewasini'">
-                        <div class="admin-badge-overlay">
-                            <i class="fa-solid fa-shield-halved"></i> Kepala Operasional & Layanan
+                    <div class="admin-avatar-wrapper">
+                        <div class="admin-avatar-box">
+                            <img src="ava.jpg" alt="Marsya" onerror="this.src='https://via.placeholder.com/400x400?text=Marsya'">
+                            <div class="admin-badge-overlay">
+                                <i class="fa-solid fa-shield-halved"></i> Kepala Tim & Operasional
+                            </div>
                         </div>
+                        <div class="admin-name-label">Marsya</div>
                     </div>
                     <div class="admin-bio">
-                        <h3>Tim Manajemen Sewasini</h3>
-                        <div class="admin-role">Profesional Layanan Sewa & Logistik</div>
-                        <p>Kami mengelola seluruh operasional harian Sewasini dengan standar kualitas tinggi—memastikan setiap unit barang mulai dari alat elektronik, perkakas, hingga perlengkapan outdoor selalu berada dalam kondisi steril, terawat, dan siap digunakan.</p>
+                        <div class="admin-role">Kepala Tim & Profesional Layanan Sewa</div>
+                        <p>Saya memimpin seluruh operasional harian Sewasini bersama tim dengan standar kualitas tinggi—memastikan setiap unit barang mulai dari alat elektronik, perkakas, hingga perlengkapan outdoor selalu berada dalam kondisi steril, terawat, dan siap digunakan.</p>
                         <p>Komitmen kami adalah memberikan kemudahan akses, kecepatan respons konsultasi, serta transparansi penuh dalam setiap transaksi penyewaan demi kenyamanan Anda.</p>
                         
                         <div class="admin-meta-list">
@@ -1354,7 +1375,7 @@
                     </div>
                 </div>
 
-                <!-- SECTION TIM BULAT (6 STAF KARTUN TANPA LABEL PERAN) -->
+                <!-- SECTION TIM BULAT (4 STAF KARTUN) -->
                 <div class="team-section-container">
                     <h3>Jajaran Tim & Staff Kami</h3>
                     <p>Berkenalan dengan anggota tim berdedikasi yang siap melayani kebutuhan sewa Anda.</p>
@@ -1363,49 +1384,33 @@
                         <!-- Staf 1 -->
                         <div class="team-member-card">
                             <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-girl-manager-boss-holding-clipboard-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5755.jpg" alt="Marsya" onerror="this.src='https://via.placeholder.com/200x200?text=Marsya'">
+                                <img src="https://img.freepik.com/free-vector/cute-girl-manager-boss-holding-clipboard-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5755.jpg" alt="Andar" onerror="this.src='https://via.placeholder.com/200x200?text=Andar'">
                             </div>
-                            <div class="team-member-name">Marsya</div>
+                            <div class="team-member-name">Andar</div>
                         </div>
 
                         <!-- Staf 2 -->
                         <div class="team-member-card">
                             <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-girl-telemarketer-with-headset-cartoon-vector-icon-illustration-people-technology-icon-isolated_138676-5687.jpg" alt="Alya" onerror="this.src='https://via.placeholder.com/200x200?text=Alya'">
+                                <img src="https://img.freepik.com/free-vector/cute-girl-telemarketer-with-headset-cartoon-vector-icon-illustration-people-technology-icon-isolated_138676-5687.jpg" alt="Gita Auratih" onerror="this.src='https://via.placeholder.com/200x200?text=Gita'">
                             </div>
-                            <div class="team-member-name">Alya</div>
+                            <div class="team-member-name">Gita Auratih</div>
                         </div>
 
                         <!-- Staf 3 -->
                         <div class="team-member-card">
                             <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-delivery-man-holding-box-cartoon-vector-icon-illustration-people-transportation-icon-isolated_138676-5683.jpg" alt="Rizky" onerror="this.src='https://via.placeholder.com/200x200?text=Rizky'">
+                                <img src="https://img.freepik.com/free-vector/cute-delivery-man-holding-box-cartoon-vector-icon-illustration-people-transportation-icon-isolated_138676-5683.jpg" alt="Restiani Manda" onerror="this.src='https://via.placeholder.com/200x200?text=Restiani'">
                             </div>
-                            <div class="team-member-name">Rizky</div>
+                            <div class="team-member-name">Restiani Manda</div>
                         </div>
 
                         <!-- Staf 4 -->
                         <div class="team-member-card">
                             <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-mechanic-man-holding-wrench-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5680.jpg" alt="Fajar" onerror="this.src='https://via.placeholder.com/200x200?text=Fajar'">
+                                <img src="https://img.freepik.com/free-vector/cute-mechanic-man-holding-wrench-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5680.jpg" alt="Naomi Talondo" onerror="this.src='https://via.placeholder.com/200x200?text=Naomi'">
                             </div>
-                            <div class="team-member-name">Fajar</div>
-                        </div>
-
-                        <!-- Staf 5 -->
-                        <div class="team-member-card">
-                            <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-hijabi-girl-working-laptop-cartoon-vector-icon-illustration-people-technology-icon-concept_138676-5744.jpg" alt="Siti" onerror="this.src='https://via.placeholder.com/200x200?text=Siti'">
-                            </div>
-                            <div class="team-member-name">Siti</div>
-                        </div>
-
-                        <!-- Staf 6 -->
-                        <div class="team-member-card">
-                            <div class="team-avatar-circle">
-                                <img src="https://img.freepik.com/free-vector/cute-boy-smiling-working-laptop-cartoon-vector-icon-illustration-people-technology-icon-isolated_138676-5678.jpg" alt="Dimas" onerror="this.src='https://via.placeholder.com/200x200?text=Dimas'">
-                            </div>
-                            <div class="team-member-name">Dimas</div>
+                            <div class="team-member-name">Naomi Talondo</div>
                         </div>
                     </div>
                 </div>
