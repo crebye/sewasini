@@ -33,9 +33,10 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            padding-bottom: 70px; /* Ruang agar konten tidak tertutup bottom nav di mobile */
         }
 
-        /* Header & Navbar */
+        /* Header & Navbar Desktop */
         header {
             background: var(--white);
             box-shadow: var(--shadow);
@@ -100,6 +101,45 @@
 
         .btn-cta:hover {
             background: var(--accent-hover);
+        }
+
+        /* --- MOBILE BOTTOM NAVIGATION BAR --- */
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 0.5rem 0.5rem;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 500;
+            gap: 3px;
+            transition: color 0.2s;
+            cursor: pointer;
+            flex: 1;
+            padding: 4px 0;
+        }
+
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+        }
+
+        .mobile-nav-item.active-mobile-nav, .mobile-nav-item:hover {
+            color: var(--accent);
         }
 
         /* Hero Section */
@@ -927,8 +967,13 @@
             .logo img {
                 max-height: 32px;
             }
+            /* Sembunyikan menu teks standar di header khusus mobile */
             .nav-links {
                 display: none;
+            }
+            /* Tampilkan Bottom Navigation Bar di mobile */
+            .mobile-bottom-nav {
+                display: flex;
             }
             .hero h1 {
                 font-size: 1.7rem;
@@ -988,15 +1033,38 @@
             <a href="#" class="logo" onclick="switchTab('beranda', event)">
                 <img src="icon.png" alt="Logo Sewasini" onerror="this.style.display='none';">
             </a>
+            
+            <!-- Menu Links (Desktop) -->
             <ul class="nav-links">
                 <li><a onclick="switchTab('beranda', event)" class="active-nav" id="nav-beranda">Beranda</a></li>
                 <li><a onclick="switchTab('carasewa', event)" id="nav-carasewa">Cara Sewa</a></li>
                 <li><a onclick="switchTab('kontak', event)" id="nav-kontak">Kontak</a></li>
                 <li><a onclick="switchTab('profile', event)" id="nav-profile">Profile</a></li>
             </ul>
+
             <a href="https://wa.me/62887435952902?text=Halo%20Sewasini,%20saya%20ingin%20bertanya%20mengenai%20layanan%20sewa." target="_blank" class="btn-cta"><i class="fa-brands fa-whatsapp"></i> Hubungi Kami</a>
         </div>
     </header>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a class="mobile-nav-item active-mobile-nav" id="mob-nav-beranda" onclick="switchTab('beranda', event)">
+            <i class="fa-solid fa-house"></i>
+            <span>Beranda</span>
+        </a>
+        <a class="mobile-nav-item" id="mob-nav-carasewa" onclick="switchTab('carasewa', event)">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Cara Sewa</span>
+        </a>
+        <a class="mobile-nav-item" id="mob-nav-kontak" onclick="switchTab('kontak', event)">
+            <i class="fa-solid fa-headset"></i>
+            <span>Kontak</span>
+        </a>
+        <a class="mobile-nav-item" id="mob-nav-profile" onclick="switchTab('profile', event)">
+            <i class="fa-solid fa-user-gear"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="heroSection">
@@ -1259,7 +1327,6 @@
             <div class="profile-section">
                 <div class="profile-header">
                     <h2>Profil Pengelola & Tim Sewasini</h2>
-                    <p>Dibalik layanan penyewaan yang cepat dan terpercaya, ada komitmen penuh dari manajemen profesional kami.</p>
                 </div>
 
                 <!-- Admin Hero Card -->
@@ -1384,7 +1451,7 @@
             <div class="footer-col">
                 <h3>Kontak & Bantuan</h3>
                 <p><i class="fa-solid fa-phone"></i> +62 887-4359-52902</p>
-                <p><i class="fa-solid fa-envelope"></i> Marsya42@sma.belajar.id </p>
+                <p><i class="fa-solid fa-envelope"></i> marsya42@sma.belajar.id</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1395,7 +1462,7 @@
     <!-- JavaScript Integrasi (Fixed & Optimized) -->
     <script>
         let currentPage = 1;
-        const totalPages = 1; // Sesuaikan jumlah halaman jika data bertambah
+        const totalPages = 1;
 
         function switchTab(sectionId, event) {
             if (event) event.preventDefault();
@@ -1418,13 +1485,20 @@
                 heroSection.style.display = 'none';
             }
 
-            // 4. Perbarui kelas active-nav secara dinamis ke menu yang diklik
+            // 4. Perbarui kelas active-nav di desktop
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => link.classList.remove('active-nav'));
-            
             const activeNavLink = document.getElementById('nav-' + sectionId);
             if (activeNavLink) {
                 activeNavLink.classList.add('active-nav');
+            }
+
+            // 5. Perbarui kelas active-mobile-nav di bottom bar
+            const mobNavItems = document.querySelectorAll('.mobile-bottom-nav .mobile-nav-item');
+            mobNavItems.forEach(item => item.classList.remove('active-mobile-nav'));
+            const activeMobItem = document.getElementById('mob-nav-' + sectionId);
+            if (activeMobItem) {
+                activeMobItem.classList.add('active-mobile-nav');
             }
             
             // Scroll otomatis ke bagian atas halaman secara halus
