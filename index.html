@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sewasini - Layanan Sewa Barang Terpercaya</title>
+    
+    <!-- Favicon Emoji menggunakan Data URL -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+
     <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,7 +37,7 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            padding-bottom: 70px; /* Ruang agar konten tidak tertutup bottom nav di mobile */
+            padding-bottom: 70px;
         }
 
         /* Header & Navbar Desktop */
@@ -398,12 +402,10 @@
             display: none;
         }
 
-        /* --- PROFESSIONAL ADMIN PROFILE SECTION --- */
+        /* --- PROFILE SECTION --- */
         .profile-section {
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 3rem 2rem;
+            background: transparent;
+            padding: 1rem 0;
         }
 
         .profile-header {
@@ -414,57 +416,69 @@
 
         .profile-header h2 {
             color: var(--primary);
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
 
         .profile-header p {
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
-        /* Admin Hero Card */
+        /* Modern Admin Hero Card */
         .admin-hero-card {
-            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            background: var(--white);
             border: 1px solid #e2e8f0;
-            border-radius: var(--radius);
-            padding: 2.5rem;
+            border-radius: 20px;
+            padding: 3rem;
             display: grid;
             grid-template-columns: 280px 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .admin-avatar-box {
+            margin-bottom: 3.5rem;
+            box-shadow: 0 10px 25px -5px rgba(15, 43, 92, 0.05), 0 8px 10px -6px rgba(15, 43, 92, 0.05);
             position: relative;
-            border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
-            background: #e2e8f0;
-            height: 280px;
         }
 
-        .admin-avatar-box img {
-            width: 100%;
+        .admin-hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
             height: 100%;
-            object-fit: cover;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
 
-        /* Styling container foto dan nama kepala tim */
         .admin-avatar-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .admin-name-label {
-            margin-top: 0.75rem;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-align: center;
+        .admin-avatar-box {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 20px -8px rgba(15, 43, 92, 0.2);
+            background: #e2e8f0;
+            width: 100%;
+            height: 280px;
+            border: 4px solid var(--white);
+        }
+
+        .admin-avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .admin-hero-card:hover .admin-avatar-box img {
+            transform: scale(1.03);
         }
 
         .admin-badge-overlay {
@@ -472,107 +486,140 @@
             bottom: 12px;
             left: 12px;
             right: 12px;
-            background: rgba(15, 43, 92, 0.85);
-            backdrop-filter: blur(4px);
+            background: rgba(15, 43, 92, 0.9);
+            backdrop-filter: blur(6px);
             color: var(--white);
             padding: 8px 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
-        .admin-bio h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
+        .admin-name-label {
+            margin-top: 1rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
-            display: none; /* Disembunyikan karena nama sudah dipindah ke bawah foto */
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: -0.3px;
         }
 
         .admin-role {
+            display: inline-block;
+            background: #fff7ed;
             color: var(--accent);
-            font-size: 1rem;
+            border: 1px solid #ffedd5;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .admin-bio p {
             color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 1.75rem;
         }
 
         .admin-meta-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 1.25rem;
+            gap: 1.25rem;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1.5rem;
         }
 
         .admin-meta-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.88rem;
+            gap: 10px;
+            font-size: 0.9rem;
             color: var(--text-dark);
             font-weight: 500;
+            background: #f8fafc;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
         }
 
         .admin-meta-item i {
             color: var(--accent);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
-        /* --- TIM BULAT SECTION (NEW) --- */
+        /* --- MODERN TEAM SECTION --- */
         .team-section-container {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 3rem 2rem;
             margin-top: 3.5rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(15, 43, 92, 0.05);
             text-align: center;
         }
 
         .team-section-container h3 {
             color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.75rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         .team-section-container p {
             color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
         }
 
         .team-circles-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2rem;
+            justify-items: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .team-member-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 130px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px -5px rgba(255, 122, 0, 0.15);
+            background: var(--white);
         }
 
         .team-avatar-circle {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--accent);
-            box-shadow: var(--shadow);
+            box-shadow: 0 6px 15px rgba(15, 43, 92, 0.1);
             background: #e2e8f0;
-            margin-bottom: 0.75rem;
-            transition: transform 0.3s, border-color 0.3s;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-card:hover .team-avatar-circle {
+            transform: scale(1.08);
+            border-color: var(--primary);
         }
 
         .team-avatar-circle img {
@@ -581,73 +628,17 @@
             object-fit: cover;
         }
 
-        .team-member-card:hover .team-avatar-circle {
-            transform: scale(1.08);
-            border-color: var(--primary);
-        }
-
         .team-member-name {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
-        /* Values Grid */
-        .admin-values-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .admin-values-header h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .admin-values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .av-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .av-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .av-icon {
-            background: var(--primary);
-            color: var(--white);
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .av-card h4 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .av-card p {
+        .team-member-role {
+            font-size: 0.8rem;
             color: var(--text-light);
-            font-size: 0.88rem;
-            line-height: 1.6;
+            font-weight: 500;
         }
 
         /* --- CARA SEWA SECTION --- */
@@ -983,11 +974,9 @@
             .logo img {
                 max-height: 32px;
             }
-            /* Sembunyikan menu teks standar di header khusus mobile */
             .nav-links {
                 display: none;
             }
-            /* Tampilkan Bottom Navigation Bar di mobile */
             .mobile-bottom-nav {
                 display: flex;
             }
@@ -1006,6 +995,11 @@
             .admin-hero-card {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .admin-hero-card::before {
+                width: 100%;
+                height: 6px;
             }
             .admin-avatar-wrapper {
                 max-width: 220px;
@@ -1346,23 +1340,23 @@
             <div class="profile-section">
                 <div class="profile-header">
                     <h2>Profil Pengelola & Tim Sewasini</h2>
+                    <p>Mengenal lebih dekat orang-orang hebat di balik layanan sewa barang terpercaya Anda.</p>
                 </div>
 
-                <!-- Admin Hero Card (Marsya dengan nama di bawah foto) -->
+                <!-- Admin Hero Card (Marsya) -->
                 <div class="admin-hero-card">
                     <div class="admin-avatar-wrapper">
                         <div class="admin-avatar-box">
                             <img src="ava.jpg" alt="Marsya" onerror="this.src='https://via.placeholder.com/400x400?text=Marsya'">
                             <div class="admin-badge-overlay">
-                                <i class="fa-solid fa-shield-halved"></i> Kepala Tim & Operasional
+                                <i class="fa-solid fa-shield-halved"></i> Pimpinan & Operasional
                             </div>
                         </div>
                         <div class="admin-name-label">Marsya</div>
                     </div>
                     <div class="admin-bio">
-                        <div class="admin-role">Kepala Tim & Profesional Layanan Sewa</div>
-                        <p>Saya memimpin seluruh operasional harian Sewasini bersama tim dengan standar kualitas tinggi—memastikan setiap unit barang mulai dari alat elektronik, perkakas, hingga perlengkapan outdoor selalu berada dalam kondisi steril, terawat, dan siap digunakan.</p>
-                        <p>Komitmen kami adalah memberikan kemudahan akses, kecepatan respons konsultasi, serta transparansi penuh dalam setiap transaksi penyewaan demi kenyamanan Anda.</p>
+                        <div class="admin-role"><i class="fa-solid fa-crown" style="margin-right: 6px;"></i> Kepala Tim & Pendiri</div>
+                        <p>Memimpin operasional harian Sewasini dengan dedikasi tinggi. Memastikan setiap unit barang selalu steril, terawat, dan siap digunakan untuk kenyamanan serta kepuasan seluruh pelanggan.</p>
                         
                         <div class="admin-meta-list">
                             <div class="admin-meta-item">
@@ -1378,7 +1372,7 @@
                 <!-- SECTION TIM BULAT (4 STAF KARTUN) -->
                 <div class="team-section-container">
                     <h3>Jajaran Tim & Staff Kami</h3>
-                    <p>Berkenalan dengan anggota tim berdedikasi yang siap melayani kebutuhan sewa Anda.</p>
+                    <p>Berkenalan dengan anggota tim profesional yang siap melayani kebutuhan sewa Anda setiap hari.</p>
                     
                     <div class="team-circles-grid">
                         <!-- Staf 1 -->
@@ -1387,6 +1381,7 @@
                                 <img src="https://img.freepik.com/free-vector/cute-girl-manager-boss-holding-clipboard-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5755.jpg" alt="Andar" onerror="this.src='https://via.placeholder.com/200x200?text=Andar'">
                             </div>
                             <div class="team-member-name">Andar</div>
+                            <div class="team-member-role">Manager Administrasi</div>
                         </div>
 
                         <!-- Staf 2 -->
@@ -1395,6 +1390,7 @@
                                 <img src="https://img.freepik.com/free-vector/cute-girl-telemarketer-with-headset-cartoon-vector-icon-illustration-people-technology-icon-isolated_138676-5687.jpg" alt="Gita Auratih" onerror="this.src='https://via.placeholder.com/200x200?text=Gita'">
                             </div>
                             <div class="team-member-name">Gita Auratih</div>
+                            <div class="team-member-role">Layanan Pelanggan</div>
                         </div>
 
                         <!-- Staf 3 -->
@@ -1403,6 +1399,7 @@
                                 <img src="https://img.freepik.com/free-vector/cute-delivery-man-holding-box-cartoon-vector-icon-illustration-people-transportation-icon-isolated_138676-5683.jpg" alt="Restiani Manda" onerror="this.src='https://via.placeholder.com/200x200?text=Restiani'">
                             </div>
                             <div class="team-member-name">Restiani Manda</div>
+                            <div class="team-member-role">Logistik & Pengiriman</div>
                         </div>
 
                         <!-- Staf 4 -->
@@ -1411,31 +1408,11 @@
                                 <img src="https://img.freepik.com/free-vector/cute-mechanic-man-holding-wrench-cartoon-vector-icon-illustration-people-occupation-icon-isolated_138676-5680.jpg" alt="Naomi Talondo" onerror="this.src='https://via.placeholder.com/200x200?text=Naomi'">
                             </div>
                             <div class="team-member-name">Naomi Talondo</div>
+                            <div class="team-member-role">Teknisi & Perawatan Unit</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Admin Values / Standards -->
-                <div class="admin-values-header" style="margin-top: 3rem;">
-                    <h3>Standar Profesionalisme Kami</h3>
-                </div>
-                <div class="admin-values-grid">
-                    <div class="av-card">
-                        <div class="av-icon"><i class="fa-solid fa-handshake"></i></div>
-                        <h4>Pelayanan Transparan</h4>
-                        <p>Pemberian informasi rinci terkait harga sewa, ketentuan deposit, dan syarat tanpa biaya tersembunyi.</p>
-                    </div>
-                    <div class="av-card">
-                        <div class="av-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h4>Perawatan Unit Berkala</h4>
-                        <p>Pengecekan dan pemeliharaan rutin pada setiap barang sebelum diserahterimakan kepada penyewa.</p>
-                    </div>
-                    <div class="av-card">
-                        <div class="av-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <h4>Solusi Cepat Tanggap</h4>
-                        <p>Siap membantu konsultasi kebutuhan perlengkapan mendadak maupun penjadwalan pick-up/delivery.</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -1464,25 +1441,24 @@
         </div>
     </footer>
 
-    <!-- JavaScript Integrasi (Fixed & Optimized) -->
+    <!-- JavaScript Integrasi (Error-Free & Clean Logic) -->
     <script>
         let currentPage = 1;
-        const totalPages = 1;
+        const itemsPerPage = 6;
+        const allCards = document.querySelectorAll('#beranda .product-card');
+        const totalPages = Math.ceil(allCards.length / itemsPerPage) || 1;
 
         function switchTab(sectionId, event) {
             if (event) event.preventDefault();
 
-            // 1. Sembunyikan semua section konten halaman
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active-section'));
 
-            // 2. Tampilkan section yang dipilih
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active-section');
             }
 
-            // 3. Atur visibilitas Hero Section (hanya tampil di Beranda)
             const heroSection = document.getElementById('heroSection');
             if (sectionId === 'beranda') {
                 heroSection.style.display = 'block';
@@ -1490,7 +1466,6 @@
                 heroSection.style.display = 'none';
             }
 
-            // 4. Perbarui kelas active-nav di desktop
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => link.classList.remove('active-nav'));
             const activeNavLink = document.getElementById('nav-' + sectionId);
@@ -1498,7 +1473,6 @@
                 activeNavLink.classList.add('active-nav');
             }
 
-            // 5. Perbarui kelas active-mobile-nav di bottom bar
             const mobNavItems = document.querySelectorAll('.mobile-bottom-nav .mobile-nav-item');
             mobNavItems.forEach(item => item.classList.remove('active-mobile-nav'));
             const activeMobItem = document.getElementById('mob-nav-' + sectionId);
@@ -1506,7 +1480,6 @@
                 activeMobItem.classList.add('active-mobile-nav');
             }
             
-            // Scroll otomatis ke bagian atas halaman secara halus
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1546,6 +1519,8 @@
             
             let matchCount = 0;
 
+            noResult.style.display = "none";
+
             if (input.trim() !== "") {
                 pagination.style.display = "none";
                 
@@ -1562,6 +1537,7 @@
                 }
             } else {
                 pagination.style.display = "flex";
+                noResult.style.display = "none";
                 gantiHalaman(currentPage);
                 return;
             }
